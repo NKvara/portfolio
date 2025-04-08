@@ -1,24 +1,25 @@
+import Background from "@/ui/background";
 import Wrapper from "@/ui/wrapper";
 import {lazy, Suspense} from "react";
+import {Cursor} from "react-creative-cursor";
 import {Toaster} from "react-hot-toast";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import "react-creative-cursor/dist/styles.css";
 
 const Home = lazy(() => import("@/pages/home"));
 function App() {
   return (
-    <Router>
-      <div className="fixed top-0 h-svh w-full bg-neutral-950 -z-10 pointer-events-none ">
-        <div className="absolute -inset-8 [background-image:linear-gradient(to_right,#131421_2px,transparent_2px),linear-gradient(to_bottom,#131421_2px,transparent_2px)] [background-size:55px_55px]" />
-        <div className="absolute -inset-8 [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)] bg-neutral-950" />
-      </div>
+    <Router basename="/portfolio">
+      <Background />
 
-      <Wrapper>
-        <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Cursor isGelly={true} cursorBackgrounColor="#92bbf7" cursorSize={32} animationDuration={1.25} />
+        <Wrapper>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
-        </Suspense>
-      </Wrapper>
+        </Wrapper>
+      </Suspense>
       <Toaster position="bottom-center" />
     </Router>
   );
