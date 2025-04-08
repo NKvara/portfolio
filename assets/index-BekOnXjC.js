@@ -1,0 +1,1 @@
+import{j as s,m as e}from"./index-8qDEBX9S.js";const l=()=>s.jsx(e.Element,{name:"home",className:"h-svh w-full",children:"Home"}),n=()=>s.jsx(e.Element,{name:"skills",className:"h-svh w-full",children:"Skills"});function m(){return s.jsxs("div",{children:[s.jsx(l,{}),s.jsx(n,{})]})}export{m as default};
