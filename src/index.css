@@ -9,11 +9,11 @@ body, * {
 }
 
 :root {
-  --color-primary: #3463e3;
+  --color-primary: #1b9cd2;
 }
 
 @theme {
-  --color-primary: #3463e3;
+  --color-primary: #1b9cd2;
 }
 
 body {
