@@ -7,7 +7,12 @@ import {Link, scrollSpy} from "react-scroll";
 import {GrDocumentPdf} from "react-icons/gr";
 import {useMouse} from "src/functions/mouse";
 
-const navigation = ["home", "skills", "projects", "experience"];
+const navigation = [
+  {name: "home", color: "#131421"},
+  {name: "skills", color: "#0E0E13"},
+  {name: "projects", color: "#0E0E13"},
+  {name: "experience", color: "#0E0E13"}
+];
 
 const icons = [
   {
@@ -32,7 +37,13 @@ const icons = [
   }
 ];
 
-const Navigation = ({children}: {children: ReactNode}) => {
+const Navigation = ({
+  setColor,
+  children
+}: {
+  setColor: (color: string) => void;
+  children: ReactNode;
+}) => {
   const mouse = useMouse();
 
   useEffect(() => {
@@ -55,18 +66,20 @@ const Navigation = ({children}: {children: ReactNode}) => {
             <div className="flex justify-center items-center gap-8">
               {navigation.map((o) => (
                 <Link
-                  key={"navigation" + o}
+                  key={"navigation" + o.name}
                   className="hover:text-primary duration-150 text-lg cursor-pointer capitalize"
-                  to={o}
+                  to={o.name}
                   smooth
                   spy
+                  offset={-300}
+                  onSetActive={() => setColor(o.color)}
                   duration={500}
                   activeStyle={{
                     opacity: "1",
                     color: "var(--color-primary)"
                   }}
                 >
-                  {o}
+                  {o.name}
                 </Link>
               ))}
             </div>

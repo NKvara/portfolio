@@ -1,6 +1,6 @@
 import Wrapper from "@/ui/wrapper";
 import {Element} from "react-scroll";
-import {projects} from "src/pages/home/helper/projects";
+import {projects, personalProjects} from 'src/pages/home/helper/projects';
 import {useMouse} from "src/functions/mouse";
 import {motion} from "framer-motion";
 import {useState} from "react";
@@ -31,7 +31,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
           animate={{x: mouse.x - 20, y: mouse.y - 20}}
         />
         <div className="z-10 p-3 bg-neutral-950/60 backdrop-blur-xl rounded-2xl">
-          <div className="relative rounded-xl overflow-hidden mb-1">
+          <div className="relative rounded-xl overflow-hidden mb-2">
             <img
               className="group-hover:scale-105 duration-300"
               src={project.image}
@@ -73,11 +73,21 @@ const Projects = () => {
   return (
     <Element name="projects">
       <Wrapper>
-        <h1 className="text-4xl mb-8 text-center">Projects</h1>
-        <div className="grid grid-cols-2 gap-4">
-          {projects.map((o) => (
-            <Project key={o.title} project={o} />
-          ))}
+        <div className="mb-12">
+          <h1 className="text-4xl mb-8 text-center">Projects</h1>
+          <div className="grid grid-cols-2 gap-4">
+            {projects.map((o) => (
+              <Project key={o.title} project={o} />
+            ))}
+          </div>
+        </div>
+        <div>
+          <h1 className="text-4xl mb-8 text-center">Personal Projects</h1>
+          <div className="grid grid-cols-2 gap-4">
+            {personalProjects.map((o) => (
+              <Project key={o.title} project={o} />
+            ))}
+          </div>
         </div>
       </Wrapper>
     </Element>
