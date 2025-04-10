@@ -1,5 +1,5 @@
 import useSoundVisualizer from "@/functions/sound";
-import { FaArrowDown } from "react-icons/fa";
+import {FaArrowDown} from "react-icons/fa";
 import {Element} from "react-scroll";
 import {letters} from "src/pages/home/helper/letters";
 
@@ -15,8 +15,9 @@ const About = () => {
       <h1 className="text-8xl mb-2">
         I make{" "}
         <span className="flex">
-          {letters.map((o) => (
+          {letters.map((o, i) => (
             <div
+              key={o.letter + i}
               className="text-transparent bg-clip-text"
               data-cursor-color={"#f3f87f"}
               data-cursor-exclusion
