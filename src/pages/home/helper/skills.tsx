@@ -1,14 +1,15 @@
-import {SiJavascript, SiTypescript} from "react-icons/si";
-
 export const skills = {
-  languages: [
-    {
-      name: "javascript",
-      icon: <SiJavascript />
-    },
-    {
-      name: "typescript",
-      icon: <SiTypescript />
-    }
-  ]
+  languages: ["Javascript", "Typescript"],
+  frameworks: ["React", "Vue", "Next.js", "Nuxt.js", "React Native"],
+  developmentTools: [
+    "Vite",
+    "Webpack",
+    "Babel",
+    "GraphQL",
+    "React Query",
+    "Redux",
+    "Three.js"
+  ],
+  styling: ["TailwindCSS", "Material-UI", "Styled-Components", "Sass"],
+  backend: ["Node.js", "Rest APIs", "Strapi", "Sanity"]
 };

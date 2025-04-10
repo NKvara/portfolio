@@ -4,25 +4,9 @@ import {IoMdMail} from "react-icons/io";
 import toast from "react-hot-toast";
 import {motion} from "framer-motion";
 import {Link, scrollSpy} from "react-scroll";
+import {GrDocumentPdf} from "react-icons/gr";
 
-const navigation = [
-  {
-    name: "Home",
-    link: "home"
-  },
-  {
-    name: "Skills",
-    link: "skills"
-  },
-  {
-    name: "Projects",
-    link: "projects"
-  },
-  {
-    name: "Experience",
-    link: "experience"
-  }
-];
+const navigation = ["home", "skills", "projects", "experience"];
 
 const icons = [
   {
@@ -39,6 +23,11 @@ const icons = [
       navigator.clipboard.writeText("nika.kvaratskhelia.01@gmail.com");
       toast.success("Email copied to clipboard");
     }
+  },
+  {
+    icon: <GrDocumentPdf />,
+    link: "/portfolio/pdf/NikaKvaratskhelia2025.pdf",
+    download: true
   }
 ];
 
@@ -75,9 +64,9 @@ const Navigation = ({children}: {children: ReactNode}) => {
             <div className="flex justify-center items-center gap-8">
               {navigation.map((o) => (
                 <Link
-                  key={"navigation" + o.name}
-                  className="hover:text-primary duration-150 text-lg cursor-pointer"
-                  to={o.link}
+                  key={"navigation" + o}
+                  className="hover:text-primary duration-150 text-lg cursor-pointer capitalize"
+                  to={o}
                   smooth
                   spy
                   duration={500}
@@ -86,7 +75,7 @@ const Navigation = ({children}: {children: ReactNode}) => {
                     color: "var(--color-primary)"
                   }}
                 >
-                  {o.name}
+                  {o}
                 </Link>
               ))}
             </div>
@@ -98,6 +87,7 @@ const Navigation = ({children}: {children: ReactNode}) => {
                   href={o.link}
                   target="_blank"
                   onClick={o.func}
+                  download={o.download}
                 >
                   {o.icon}
                 </a>

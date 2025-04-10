@@ -1,4 +1,5 @@
 import useSoundVisualizer from "@/functions/sound";
+import { FaArrowDown } from "react-icons/fa";
 import {Element} from "react-scroll";
 import {letters} from "src/pages/home/helper/letters";
 
@@ -38,9 +39,18 @@ const About = () => {
           ))}
         </span>
       </h1>
-      <p className="opacity-80 text-sm">
-        Front-end developer based in Georgia.
+      <p className="opacity-80 text-sm mb-8">
+        Front-end developer from Tbilisi, Georgia.
       </p>
+      <div data-cursor-color={"#f3f87f"} data-cursor-exclusion>
+        <button className="relative inline-flex h-12 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
+          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#145791_0%,#7299f4_50%,#333eff_100%)]"></span>
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-neutral-900 hover:bg-neutral-800 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+            Contact me
+            <FaArrowDown />
+          </span>
+        </button>
+      </div>
     </Element>
   );
 };
