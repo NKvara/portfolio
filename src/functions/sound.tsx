@@ -6,16 +6,15 @@ const useSoundVisualizer = () => {
   const analyserRef = useRef<Tone.Analyser | null>(null);
   const playerRef = useRef<Tone.Player | null>(null);
   const [path, setPath] = useState("");
-  const [isReady, setIsReady] = useState(false); // <- NEW
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (!path) return; // Don't create player if no path yet
+    if (!path) return;
 
-    setIsReady(false); // Every time path changes, assume not ready
+    setIsReady(false);
 
     const analyser = new Tone.Analyser("waveform", 256);
     const player = new Tone.Player(path, () => {
-      console.log("Sound file loaded!");
       player.volume.value = -10;
       player.connect(analyser);
       setIsReady(true);
@@ -63,7 +62,7 @@ const useSoundVisualizer = () => {
       if (isReady && playerRef.current) {
         playerRef.current.start();
       } else {
-        console.log("Sound not ready yet!");
+        console.warn("Sound not ready yet!");
       }
     },
     handleStopSound: () => {

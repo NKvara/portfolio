@@ -18,7 +18,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
   return (
     <a
       data-cursor-size="0px"
-      href="https://iberia-five.vercel.app/"
+      href={project.link}
       target="_blank"
     >
       <div

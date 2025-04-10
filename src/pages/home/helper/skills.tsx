@@ -1,17 +1,16 @@
-import {FaCss3Alt, FaGitAlt, FaHtml5, FaNodeJs, FaReact, FaVuejs} from "react-icons/fa";
+import {
+  FaCss3Alt,
+  FaGitAlt,
+  FaHtml5,
+  FaNodeJs,
+  FaReact,
+  FaVuejs
+} from "react-icons/fa";
 import {BiLogoJavascript, BiLogoReact, BiLogoTypescript} from "react-icons/bi";
 import {RiNextjsFill, RiTailwindCssFill} from "react-icons/ri";
 import {SiNuxtdotjs} from "react-icons/si";
 
 export const skills = [
-  {
-    name: "HTML",
-    icon: <FaHtml5 />
-  },
-  {
-    name: "CSS",
-    icon: <FaCss3Alt />
-  },
   {
     name: "Javascript",
     icon: <BiLogoJavascript />
@@ -19,6 +18,14 @@ export const skills = [
   {
     name: "Typescript",
     icon: <BiLogoTypescript />
+  },
+  {
+    name: "HTML",
+    icon: <FaHtml5 />
+  },
+  {
+    name: "CSS",
+    icon: <FaCss3Alt />
   },
   {
     name: "Tailwind CSS",
@@ -51,5 +58,5 @@ export const skills = [
   {
     name: "Node.js",
     icon: <FaNodeJs />
-  },
+  }
 ];

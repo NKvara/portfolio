@@ -4,14 +4,12 @@ import {IoMdMail} from "react-icons/io";
 import toast from "react-hot-toast";
 import {motion} from "framer-motion";
 import {Link, scrollSpy} from "react-scroll";
-import {GrDocumentPdf} from "react-icons/gr";
 import {useMouse} from "src/functions/mouse";
 
 const navigation = [
   {name: "home", color: "#131421"},
   {name: "skills", color: "#0E0E13"},
-  {name: "projects", color: "#0E0E13"},
-  {name: "experience", color: "#0E0E13"}
+  {name: "projects", color: "#0E0E13"}
 ];
 
 const icons = [
@@ -27,13 +25,9 @@ const icons = [
     icon: <IoMdMail />,
     func: () => {
       navigator.clipboard.writeText("nika.kvaratskhelia.01@gmail.com");
+      toast.dismiss();
       toast.success("Email copied to clipboard");
     }
-  },
-  {
-    icon: <GrDocumentPdf />,
-    link: "/portfolio/pdf/NikaKvaratskhelia2025.pdf",
-    download: true
   }
 ];
 
@@ -91,7 +85,6 @@ const Navigation = ({
                   href={o.link}
                   target="_blank"
                   onClick={o.func}
-                  download={o.download}
                 >
                   {o.icon}
                 </a>

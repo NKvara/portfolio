@@ -1,10 +1,24 @@
 import useSoundVisualizer from "@/functions/sound";
-import {FaArrowDown} from "react-icons/fa";
+import {motion, useScroll} from "framer-motion";
+import {LuDownload} from "react-icons/lu";
 import {Element} from "react-scroll";
 import {letters} from "src/pages/home/helper/letters";
+import {TfiMouse} from "react-icons/tfi";
+import {HiChevronDown} from "react-icons/hi2";
+import {useEffect, useState} from "react";
 
 const About = () => {
   const sound = useSoundVisualizer();
+  const {scrollY} = useScroll();
+  const [currentY, setCurrentY] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = scrollY.on("change", (latest) => {
+      setCurrentY(latest);
+    });
+
+    return () => unsubscribe(); // Cleanup when unmount
+  }, [scrollY]);
 
   return (
     <Element
@@ -45,13 +59,33 @@ const About = () => {
       </p>
       <div data-cursor-color={"#f3f87f"} data-cursor-exclusion>
         <button className="relative inline-flex h-12 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#145791_0%,#7299f4_50%,#333eff_100%)]"></span>
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-neutral-900 hover:bg-neutral-800 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
-            Contact me
-            <FaArrowDown />
-          </span>
+          <a download href="/portfolio/pdf/NikaKvaratskhelia2025.pdf">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#145791_0%,#7299f4_50%,#333eff_100%)]"></span>
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-neutral-900 hover:bg-neutral-800 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+              Downlaod CV
+              <LuDownload />
+            </span>
+          </a>
         </button>
       </div>
+
+      <motion.div
+        className="absolute bottom-8 [&>svg]:text-4xl"
+        animate={{y: ["0%", "-30%", "0%"]}}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeInOut"
+        }}
+        style={{
+          opacity: currentY > 120 ? 0 : 100,
+          transition: "opacity 0.4s ease"
+        }}
+      >
+        <TfiMouse />
+        <HiChevronDown />
+      </motion.div>
     </Element>
   );
 };
