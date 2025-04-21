@@ -11,7 +11,7 @@ const Skills = () => {
           {skills.map((o) => (
             <div
               key={o.name}
-              className="flex flex-col items-center justify-center border-2 border-neutral-800 bg-neutral-950/40 hover:bg-neutral-900/40 rounded-xl [&>svg]:text-3xl hover:[&>svg]:text-primary duration-150 gap-2 py-4"
+              className="flex flex-col items-center justify-center border-2 border-neutral-800 bg-neutral-950/40 hover:bg-neutral-900/40 rounded-xl [&>svg]:text-3xl hover:[&>svg]:text-primary [&_svg]:transition duration-150 gap-2 py-4"
               data-cursor-exclusion
             >
               {o.icon}

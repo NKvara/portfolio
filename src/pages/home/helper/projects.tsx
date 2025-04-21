@@ -102,5 +102,17 @@ export const personalProjects = [
       projectIcons.Tailwind,
       projectIcons.Framer
     ]
+  },
+  {
+    title: "Aquarium",
+    desc: "Adipisicing nisi officia nostrud veniam dolore sit occaecat anim Lorem.",
+    image: "/portfolio/projects/aquarium.jpg",
+    link: "https://nkvara.github.io/aquarium/",
+    tech: [
+      projectIcons.Typescript,
+      projectIcons.Vite,
+      projectIcons.Tailwind,
+      projectIcons.Framer
+    ]
   }
 ];

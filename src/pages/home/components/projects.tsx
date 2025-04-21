@@ -33,7 +33,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
         <div className="z-10 p-3 bg-neutral-950/60 backdrop-blur-xl rounded-2xl">
           <div className="relative rounded-xl overflow-hidden mb-2">
             <img
-              className="group-hover:scale-105 duration-300"
+              className="group-hover:scale-105 duration-300 h-52"
               src={project.image}
             />
             <div className="absolute bottom-2 right-2 flex gap-2 [&_svg]:text-lg">
@@ -41,7 +41,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
                 <div key={o.name + i} className="relative">
                   <div
                     ref={openIndex === i ? refs.setReference : null}
-                    className="bg-neutral-950 rounded-lg p-1 hover:[&_svg]:text-primary"
+                    className="bg-neutral-950 rounded-lg p-1 hover:[&_svg]:text-primary [&_svg]:transition"
                     onMouseEnter={() => setOpenIndex(i)}
                     onMouseLeave={() => setOpenIndex(null)}
                   >
