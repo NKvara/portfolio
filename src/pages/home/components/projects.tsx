@@ -30,10 +30,10 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
           transition={{duration: 0}}
           animate={{x: mouse.x - 20, y: mouse.y - 20}}
         />
-        <div className="z-10 p-3 bg-neutral-950/60 backdrop-blur-xl rounded-2xl h-[344px]">
+        <div className="z-10 p-3 bg-neutral-950/60 backdrop-blur-xl rounded-2xl h-[320px] pc:h-[344px]">
           <div className="relative rounded-xl overflow-hidden mb-2">
             <img
-              className="group-hover:scale-105 duration-300 h-52"
+              className="group-hover:scale-105 duration-300 h-48 pc:h-52 w-full object-cover object-top"
               src={project.image}
             />
             <div className="absolute bottom-2 right-2 flex gap-2 [&_svg]:text-lg">
@@ -61,7 +61,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
               ))}
             </div>
           </div>
-          <p className="mb-4 text-lg">{project.title}</p>
+          <p className="mb-2 pc:mb-4 text-lg">{project.title}</p>
           <p className="opacity-70 text-sm">{project.desc}</p>
         </div>
       </div>
@@ -75,7 +75,7 @@ const Projects = () => {
       <Wrapper>
         <div className="mb-12">
           <h1 className="text-4xl mb-8 text-center">Projects</h1>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 pc:grid-cols-2 gap-4">
             {projects.map((o) => (
               <Project key={o.title} project={o} />
             ))}
@@ -83,7 +83,7 @@ const Projects = () => {
         </div>
         <div>
           <h1 className="text-4xl mb-8 text-center">Personal Projects</h1>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 pc:grid-cols-2 gap-4">
             {personalProjects.map((o) => (
               <Project key={o.title} project={o} />
             ))}

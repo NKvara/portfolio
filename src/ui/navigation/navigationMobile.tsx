@@ -50,7 +50,7 @@ const NavigationMobile = ({children}: {children: ReactNode}) => {
             to={o.name}
             smooth
             spy
-            offset={-50}
+            offset={-140}
             onSetActive={() => {
               setColor(o.color);
               setActive(i);
