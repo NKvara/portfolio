@@ -1,6 +1,6 @@
 import Wrapper from "@/ui/wrapper";
 import {Element} from "react-scroll";
-import {projects, personalProjects} from 'src/pages/home/helper/projects';
+import {projects, personalProjects} from "src/pages/home/helper/projects";
 import {useMouse} from "src/functions/mouse";
 import {motion} from "framer-motion";
 import {useState} from "react";
@@ -19,6 +19,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
     <a
       data-cursor-size="0px"
       href={project.link}
+      onClick={project.func}
       target="_blank"
     >
       <div

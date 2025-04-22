@@ -76,17 +76,18 @@ const About = () => {
             </a>
           </button>
         </div>
-        {icons.map((o, i) => (
-          <a
-            key={"icons" + i}
-            className="[&>svg]:size-6"
-            href={o.link}
-            target="_blank"
-            onClick={o.func}
-          >
-            {o.icon}
-          </a>
-        ))}
+        {phone &&
+          icons.map((o, i) => (
+            <a
+              key={"icons" + i}
+              className="[&>svg]:size-6"
+              href={o.link}
+              target="_blank"
+              onClick={o.func}
+            >
+              {o.icon}
+            </a>
+          ))}
       </div>
       {!phone && (
         <motion.div

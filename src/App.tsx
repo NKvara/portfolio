@@ -9,6 +9,7 @@ import ScrollBar from "@/ui/scrollBar";
 import {usePhoneMediaQuery} from "@/functions/usePhone";
 import Color from "@/functions/colorContext";
 import Navigation from "@/ui/navigation";
+import Loader from "@/ui/loader";
 
 const Home = lazy(() => import("@/pages/home"));
 
@@ -19,7 +20,7 @@ function App() {
     <Router basename="/portfolio">
       <Color>
         <Background />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           {!phone && (
             <>
               <ScrollBar />
