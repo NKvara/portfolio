@@ -5,7 +5,7 @@ const ScrollBar = () => {
 
   return (
     <motion.div
-      className="fixed right-0 top-0 bg-primary w-1.5 z-50 h-svh origin-top"
+      className="fixed right-0 top-0 bg-primary w-1.5 z-50 h-lvh origin-top"
       style={{scaleY: scrollYProgress}}
     />
   );

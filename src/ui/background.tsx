@@ -1,6 +1,10 @@
-const Background = ({color}: {color: string}) => {
+import { useColorContext } from "@/functions/colorContext";
+
+const Background = () => {
+  const {color} = useColorContext();
+  
   return (
-    <div className="fixed top-0 h-svh w-full bg-neutral-950 -z-10 pointer-events-none">
+    <div className="fixed top-0 h-lvh w-full bg-neutral-950 -z-10 pointer-events-none">
       <div
         style={{
           backgroundImage: `linear-gradient(to right, gray 2px, transparent 2px), linear-gradient(to bottom, gray 2px, transparent 2px)`,

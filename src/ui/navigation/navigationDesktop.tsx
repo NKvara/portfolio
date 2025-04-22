@@ -1,44 +1,17 @@
 import {ReactNode, useEffect} from "react";
-import {FaGithub, FaLinkedin} from "react-icons/fa";
-import {IoMdMail} from "react-icons/io";
-import toast from "react-hot-toast";
 import {motion} from "framer-motion";
 import {Link, scrollSpy} from "react-scroll";
 import {useMouse} from "src/functions/mouse";
+import {useColorContext} from "@/functions/colorContext";
+import { icons, navigation } from "@/ui/navigation/helper";
 
-const navigation = [
-  {name: "home", color: "#131421"},
-  {name: "skills", color: "#0E0E13"},
-  {name: "projects", color: "#0E0E13"}
-];
-
-const icons = [
-  {
-    icon: <FaLinkedin />,
-    link: "https://www.linkedin.com/in/nika-kvaratskhelia-a0224b1aa"
-  },
-  {
-    icon: <FaGithub />,
-    link: "https://github.com/NKvara"
-  },
-  {
-    icon: <IoMdMail />,
-    func: () => {
-      navigator.clipboard.writeText("nika.kvaratskhelia.01@gmail.com");
-      toast.dismiss();
-      toast.success("Email copied to clipboard");
-    }
-  }
-];
-
-const Navigation = ({
-  setColor,
+const NavigationDesktop = ({
   children
 }: {
-  setColor: (color: string) => void;
   children: ReactNode;
 }) => {
   const mouse = useMouse();
+  const {setColor} = useColorContext();
 
   useEffect(() => {
     scrollSpy.update();
@@ -98,4 +71,4 @@ const Navigation = ({
   );
 };
 
-export default Navigation;
+export default NavigationDesktop;
