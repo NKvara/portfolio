@@ -17,10 +17,10 @@ function App() {
   const phone = usePhoneMediaQuery();
 
   return (
-    <Router basename="/portfolio">
-      <Color>
-        <Background />
-        <Suspense fallback={<Loader />}>
+    <Suspense fallback={<Loader />}>
+      <Router basename="/portfolio">
+        <Color>
+          <Background />
           {!phone && (
             <>
               <ScrollBar />
@@ -37,10 +37,10 @@ function App() {
               <Home />
             </SmoothScroll>
           </Navigation>
-        </Suspense>
-        <Toaster position="top-right" />
-      </Color>
-    </Router>
+          <Toaster position="top-right" />
+        </Color>
+      </Router>
+    </Suspense>
   );
 }
 
