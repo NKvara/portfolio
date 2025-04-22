@@ -50,7 +50,7 @@ const projectIcons = {
 export const projects = [
   {
     title: "Iberia Georgian Restaurant",
-    desc: "Adipisicing nisi officia nostrud veniam dolore sit occaecat anim Lorem.",
+    desc: "Full solo development, built from scratch with tight coordination with a UI designer and structured by a business contract.",
     image: "/portfolio/projects/Iberia.jpg",
     link: "https://iberia-five.vercel.app/",
     tech: [
@@ -64,7 +64,7 @@ export const projects = [
   },
   {
     title: "Rebank - Internet Bank",
-    desc: "Adipisicing nisi officia nostrud veniam dolore sit occaecat anim Lorem.",
+    desc: "Contributed to a major internet banking platform as part of a development team, focusing on code refactoring and implementing new features.",
     image: "/portfolio/projects/rebank.jpg",
     link: "https://ibank.rebank.ge",
     tech: [
@@ -77,7 +77,7 @@ export const projects = [
   },
   {
     title: "Rebank - Website",
-    desc: "Adipisicing nisi officia nostrud veniam dolore sit occaecat anim Lorem.",
+    desc: "Contributed to the development and refactoring of main functional areas of the website as part of a collaborative team effort.",
     image: "/portfolio/projects/rebank-site.jpg",
     link: "https://rebank.ge",
     tech: [
@@ -93,7 +93,7 @@ export const projects = [
 export const personalProjects = [
   {
     title: "Portfolio",
-    desc: "Adipisicing nisi officia nostrud veniam dolore sit occaecat anim Lorem.",
+    desc: "Designed and developed this portfolio from scratch to showcase my work and projects.",
     image: "/portfolio/projects/Portfolio.jpg",
     link: "https://nkvara.github.io/portfolio/",
     tech: [
@@ -105,7 +105,7 @@ export const personalProjects = [
   },
   {
     title: "Aquarium",
-    desc: "Adipisicing nisi officia nostrud veniam dolore sit occaecat anim Lorem.",
+    desc: "Created a static aquarium website as a design concept to demonstrate my visual and layout abilities.",
     image: "/portfolio/projects/aquarium.jpg",
     link: "https://nkvara.github.io/aquarium/",
     tech: [

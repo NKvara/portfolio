@@ -30,7 +30,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
           transition={{duration: 0}}
           animate={{x: mouse.x - 20, y: mouse.y - 20}}
         />
-        <div className="z-10 p-3 bg-neutral-950/60 backdrop-blur-xl rounded-2xl">
+        <div className="z-10 p-3 bg-neutral-950/60 backdrop-blur-xl rounded-2xl h-[344px]">
           <div className="relative rounded-xl overflow-hidden mb-2">
             <img
               className="group-hover:scale-105 duration-300 h-52"
@@ -62,7 +62,7 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
             </div>
           </div>
           <p className="mb-4 text-lg">{project.title}</p>
-          <p className="opacity-70">{project.desc}</p>
+          <p className="opacity-70 text-sm">{project.desc}</p>
         </div>
       </div>
     </a>
