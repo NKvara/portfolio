@@ -19,7 +19,6 @@ const Project = ({project}: {project: (typeof projects)[0]}) => {
     <a
       data-cursor-size="0px"
       href={project.link}
-      onClick={project.func}
       target="_blank"
     >
       <div

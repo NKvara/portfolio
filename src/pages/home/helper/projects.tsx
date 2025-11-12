@@ -3,7 +3,6 @@ import {BiLogoTypescript} from "react-icons/bi";
 import {SiFramer, SiSquare, SiStrapi, SiVite} from "react-icons/si";
 import {GrGraphQl} from "react-icons/gr";
 import {PiBracketsCurlyBold} from "react-icons/pi";
-import toast from "react-hot-toast";
 
 const projectIcons = {
   Typescript: {
@@ -50,15 +49,10 @@ const projectIcons = {
 
 export const projects = [
   {
-    title: "Iberia Georgian Restaurant",
+    title: "Qarva Georgian Restaurant",
     desc: "Full solo development, built from scratch with tight coordination with a UI designer and structured by a business contract.",
-    image: "/portfolio/projects/Iberia.jpg",
-    func: () => {
-      toast.dismiss();
-      toast("Work in progress", {
-        icon: "🚧"
-      });
-    },
+    image: "/portfolio/projects/Qarva.jpg",
+    link: "https://qarva.co.uk",
     tech: [
       projectIcons.Typescript,
       projectIcons.Next,
